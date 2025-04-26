@@ -1,0 +1,22 @@
+{% extends 'healthIS/base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2>Create Health Program</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="program_name" class="form-label">Program Name</label>
+            <input type="text" id="program_name" name="program_name" class="form-control" placeholder="e.g. TB, Malaria, HIV" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="description" class="form-label">Program Description</label>
+            <textarea id="description" name="description" rows="4" class="form-control" placeholder="Brief description" required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Create Program</button>
+        <a href="/" class="btn btn-secondary ms-2">Cancel</a>
+    </form>
+</div>
+{% endblock %}

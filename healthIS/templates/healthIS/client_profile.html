@@ -1,0 +1,52 @@
+{% extends 'healthIS/base.html' %}
+
+{% block content %}
+<div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white text-center">
+          <h4>Client Profile</h4>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title mb-4 text-center">
+            {{ client.first_name }} {{ client.last_name }}
+          </h5>
+
+          <ul class="list-group list-group-flush mb-4">
+            <li class="list-group-item">
+              <strong>Email:</strong> {{ client.email }}
+            </li>
+            <li class="list-group-item">
+              <strong>Phone:</strong> {{ client.contact_info }}
+            </li>
+            <li class="list-group-item">
+              <strong>Date of Birth:</strong> {{ client.dob }}
+            </li>
+            <li class="list-group-item">
+              <strong>Gender:</strong> {{ client.gender }}
+            </li>
+            <li class="list-group-item">
+              <strong>Date Registered:</strong> {{ client.date_registered }}
+            </li>
+          </ul>
+
+          <hr class="my-4">
+
+          <h5 class="text-success mb-3 text-center">Enrolled Programs</h5>
+          <ul class="list-group">
+            {% if enrollments %}
+              {% for enrollment in enrollments %}
+                <li class="list-group-item">{{ enrollment.program.name }}</li>
+              {% endfor %}
+            {% else %}
+              <li class="list-group-item text-center text-muted">No programs enrolled yet.</li>
+            {% endif %}
+          </ul>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

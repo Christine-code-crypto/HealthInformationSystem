@@ -1,0 +1,42 @@
+{% extends 'healthIS/base.html' %}
+
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <h3>Registered Clients</h3>
+  <form method="GET" class="d-flex" role="search">
+    <input class="form-control me-2" type="search" placeholder="Search clients..." name="q" value="{{ request.GET.q }}">
+    <button class="btn btn-outline-success" type="submit">Search</button>
+  </form>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-bordered table-hover">
+    <thead class="table-primary">
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for client in clients %}
+      <tr>
+        <td>{{ client.first_name }} {{ client.last_name }}</td>
+        <td>{{ client.email }}</td>
+        <td>{{ client.contact_info }}</td>
+        <td>
+          <a href="{% url 'client-profile' client.id %}" class="btn btn-sm btn-info">View Profile</a>
+          <a href="{% url 'enroll_client' client.id %}" class="btn btn-sm btn-success">Enroll</a>
+
+        </td>
+      </tr>
+      {% empty %}
+      <tr>
+        <td colspan="4" class="text-center">No clients found.</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}
