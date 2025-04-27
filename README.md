@@ -1,114 +1,80 @@
-Health Information System (HealthIS)
-A basic health information management system API built with Django and Django REST Framework.
-This system enables doctors and healthcare providers to efficiently manage clients and health programs.
+**Health Information System (HealthIS)**
 
-Features
-Create and manage health programs (e.g., TB, Malaria, HIV)
+A basic health information management system API built with Django and Django REST Framework. This system enables doctors and healthcare providers to efficiently manage clients and health programs.
 
-Register new clients with detailed profiles
+**Features**
 
-Enroll clients in one or more health programs
+- Create and manage health programs (e.g., TB, Malaria, HIV)
 
-Search clients by name
+- Register new clients with detailed profiles
 
-View client profiles including enrolled programs
+- Enroll clients in one or more health programs
 
-Expose client profiles via RESTful API endpoints
+- Search clients by name
 
-Token-based authentication for secure API access
+- View client profiles including enrolled programs
 
-Tech Stack
-Python 3.x
+- Expose client profiles via RESTful API endpoints
 
-Django 4.x
+**Token-based authentication for secure API access**
 
-Django REST Framework
+**Tech Stack**
+- Python 3.12.6
 
-PostgreSQL (production-ready database)
+- Django 4.2.8
 
-SQLite (default for development/testing)
+- Django REST Framework 3.14.0
 
-Token Authentication
+- SQLite database
 
-Setup & Installation
-Clone the repository
+**SETUP & INSTALLATION**
 
-bash
-Copy
-Edit
-git clone https://github.com/yourusername/HealthIS.git
-cd HealthIS
-Create and activate a virtual environment
-
+- Clone the repository
+git clone https://github.com/Christine-code-crypto/HealthInformationSystem.git
+cd HealthInformationSystem
+- Create and activate a virtual environment
 python -m venv venv
-source venv/bin/activate # macOS/Linux
-venv\Scripts\activate # Windows
-Install dependencies
+- Activate the virtual environment
+venv\Scripts\activate
 
+**INSTALL DEPENDANCIES**
 
-pip install -r requirements.txt
-Configure the database
-
-Default: SQLite (no configuration needed)
-
-For production, update settings.py with your PostgreSQL database credentials.
-
+- pip install -r requirements.txt
+- Configure the database
 Run database migrations
-
-bash
-Copy
-Edit
 python manage.py migrate
-Create a superuser
 
-bash
-Copy
-Edit
+- Create a superuser
 python manage.py createsuperuser
-Run the development server
-
-bash
-Copy
-Edit
+- Run the development server
 python manage.py runserver
-API Endpoints
 
-Endpoint Method Description
-/api/healthprograms/ POST Create a new health program
-/api/clients/ POST Register a new client
-/api/clients/{id}/enroll/ POST Enroll a client in a health program
-/api/clients/ GET Search clients
-/api/clients/{id}/profile/ GET View a client’s profile
-Testing
+- API Endpoints
+
+/api/healthprograms/	POST	Create a new health program
+/api/clients/	POST	Register a new client
+/api/clients/{id}/enroll/	POST	Enroll a client in a health program
+/api/clients/	GET	Search clients
+/api/clients/{id}/profile/	GET	View a client’s profile
+
+- Testing
 Run tests using Django’s built-in test framework:
 
-bash
-Copy
-Edit
-python manage.py test
-Deployment
-This app can be deployed on platforms like Render, Heroku, or AWS. When deploying, ensure you:
+python manage.py test healthIS
 
-Use PostgreSQL as the production database.
+- Deployment
+This app has be deployed on Render platform
 
-Set environment variables for sensitive data such as SECRET_KEY and database credentials.
-
-Collect static files with:
-
+- Collect static files:
 
 python manage.py collectstatic
-Future Improvements
-Implement JWT Authentication for enhanced security
 
-Add role-based access control for better permission management
-
-Improve client search with pagination and filters
 
 Develop a frontend UI for easier interaction
 
-License
+- License
 This project is open-source and licensed under the MIT License.
 
 Author
 Christine Omwansa - Software Engineering Intern
-GitHub Profile URL - https://github.com/Christine-code-crypto/HealthInformationSystem.git
+GitHub Profile: https://github.com/Christine-code-crypto/HealthInformationSystem
