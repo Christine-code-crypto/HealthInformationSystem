@@ -126,13 +126,15 @@ def register_client(request):
         email = request.POST.get('email')
         contact_info = request.POST.get('contact_info')
         dob = request.POST.get('dob')
+        gender = request.POST.get('gender')
         # Save to DB
         client = Client(
             first_name=first_name,
             last_name=last_name,
             email=email,
             contact_info=contact_info,
-            dob=dob
+            dob=dob,
+            gender=gender
         )
         client.save()
 
