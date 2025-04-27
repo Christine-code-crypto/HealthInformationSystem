@@ -65,6 +65,9 @@ python manage.py test healthIS
 - Deployment
 This app has be deployed on Render platform
 
+**PROJECT RESOURCES**
+- Powerpoint presentation link - https://docs.google.com/presentation/d/1dOtT7jsiR_tVlakacuDtRic13VTJodXO/edit?usp=sharing&ouid=111067015986396077511&rtpof=true&sd=true
+
 - Collect static files:
 
 python manage.py collectstatic
@@ -78,4 +81,4 @@ This project is open-source and licensed under the MIT License.
 Author
 Christine Omwansa - Software Engineering Intern
 GitHub Profile: https://github.com/Christine-code-crypto/HealthInformationSystem
-Powerpoint presentation: [Download PowerPoint Presentation](./docs/presentation.pptx)
+
