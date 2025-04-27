@@ -1,0 +1,39 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment folder
+venv/
+
+
+
+# Django migrations
+*/migrations/*.py
+*/migrations/*.pyc
+!*/migrations/__init__.py
+
+# VSCode settings folder
+.vscode/
+
+# Logs and debug files
+*.log
+
+# Environment variables file (if any)
+.env
+
+# Static files (if you collect static files and don't want to commit them)
+staticfiles/
+
+# Media files (uploads)
+media/
+
+# IDE/project files
+*.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Coverage reports
+htmlcov/
+.coverage
+coverage.xml
