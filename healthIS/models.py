@@ -21,7 +21,6 @@ class Client(models.Model):
     email = models.EmailField(unique=True)
     gender = models.CharField(max_length=10, choices=GENDER_CHOICES)
     contact_info = models.CharField(max_length=255)
-    #enrolled_programs = models.ManyToManyField(HealthProgram, related_name='clients', blank=True)
     date_registered = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
@@ -37,4 +36,3 @@ class Enrollment(models.Model):
 
     def __str__(self):
         return f"{self.client.first_name} enrolled in {self.program.name}"
-

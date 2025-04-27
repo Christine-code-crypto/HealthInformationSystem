@@ -123,12 +123,14 @@ def register_client(request):
     if request.method == 'POST':
         first_name = request.POST.get('first_name')
         last_name = request.POST.get('last_name')
-        contact_info = request.POST.get('phone')
+        email = request.POST.get('email')
+        contact_info = request.POST.get('contact_info')
         dob = request.POST.get('dob')
         # Save to DB
         client = Client(
             first_name=first_name,
             last_name=last_name,
+            email=email,
             contact_info=contact_info,
             dob=dob
         )
