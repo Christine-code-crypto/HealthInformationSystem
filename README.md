@@ -78,3 +78,4 @@ This project is open-source and licensed under the MIT License.
 Author
 Christine Omwansa - Software Engineering Intern
 GitHub Profile: https://github.com/Christine-code-crypto/HealthInformationSystem
+Powerpoint presentation: [Download PowerPoint Presentation](./docs/presentation.pptx)
