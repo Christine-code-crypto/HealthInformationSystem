@@ -31,7 +31,8 @@ A basic health information management system API built with Django and Django RE
 
 - Clone the repository
 git clone https://github.com/Christine-code-crypto/HealthInformationSystem.git
-cd HealthInformationSystem
+
+- cd HealthInformationSystem
 - Create and activate a virtual environment
 python -m venv venv
 - Activate the virtual environment
