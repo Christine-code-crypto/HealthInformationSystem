@@ -11,6 +11,8 @@ from django.contrib.auth import authenticate
 
 from django.contrib import messages
 from django.shortcuts import render, redirect,get_object_or_404
+from django.contrib.auth import login as auth_login, authenticate
+from django.contrib import messages
 
 
 
@@ -199,3 +201,48 @@ def enroll_client(request, client_id):
         return redirect('client-profile', client_id=client.id)
 
     return render(request, 'healthIS/enroll_client.html', {'client': client, 'programs': programs})
+
+
+
+def signup_view(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password1 = request.POST.get('password1')
+        password2 = request.POST.get('password2')
+
+        if not username or not password1 or not password2:
+            messages.error(request, 'Please fill out all fields.')
+            return render(request, 'healthIS/signup.html')
+
+        if password1 != password2:
+            messages.error(request, 'Passwords do not match.')
+            return render(request, 'healthIS/signup.html')
+
+        if User.objects.filter(username=username).exists():
+            messages.error(request, 'Username already exists.')
+            return render(request, 'healthIS/signup.html')
+
+        user = User.objects.create_user(username=username, password=password1)
+        user.save()
+
+        messages.success(request, 'Account created successfully! You can now log in.')
+        return redirect('login')
+
+    return render(request, 'healthIS/signup.html')
+
+
+def login_view(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            auth_login(request, user)
+            messages.success(request, f'Welcome back, {user.username}!')
+            return redirect('home')
+        else:
+            messages.error(request, 'Invalid username or password.')
+            return render(request, 'healthIS/login.html')
+
+    return render(request, 'healthIS/login.html')
