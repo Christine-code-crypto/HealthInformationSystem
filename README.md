@@ -67,8 +67,12 @@ This app has be deployed on Render platform
 
 **PROJECT RESOURCES**
 - Powerpoint presentation link - https://docs.google.com/presentation/d/1dOtT7jsiR_tVlakacuDtRic13VTJodXO/edit?usp=sharing&ouid=111067015986396077511&rtpof=true&sd=true
+- Video prototype demonstration(Download the video for a clear view) - https://drive.google.com/file/d/1XiCDp4Vn0jZjbYSj3copDmNZYJ3t6Hu7/view?usp=sharing
 
-- Collect static files:
+
+
+-
+**Collect static files:**
 
 python manage.py collectstatic
 
