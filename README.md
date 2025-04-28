@@ -1,8 +1,8 @@
-**Health Information System (HealthIS)**
+# Health Information System (HealthIS)
 
 A basic health information management system API built with Django and Django REST Framework. This system enables doctors and healthcare providers to efficiently manage clients and health programs.
 
-**Features**
+## Features
 
 - Create and manage health programs (e.g., TB, Malaria, HIV)
 
@@ -16,41 +16,57 @@ A basic health information management system API built with Django and Django RE
 
 - Expose client profiles via RESTful API endpoints
 
-**Token-based authentication for secure API access**
+- Token-based authentication for secure API access
 
-**Tech Stack**
-- Python 3.12.6
+##  Technologies Used (Tech Stack)
 
-- Django 4.2.8
+| **Tech**         | 
+| ---------------- | 
+| **Python 3.12.6**|
+| **Django 4.2.8** |
+| **Django REST Framework 3.14.0**|
+| **SQLite database**|
+| **Bootstrap** | 
+| **Git**          | 
+| **GitHub**       |
 
-- Django REST Framework 3.14.0
+## Setup & Installation
 
-- SQLite database
-
-**SETUP & INSTALLATION**
-
-- Clone the repository
-git clone https://github.com/Christine-code-crypto/HealthInformationSystem.git
-
-**- cd HealthInformationSystem**
-- Create and activate a virtual environment
-python -m venv venv
-- Activate the virtual environment
+1. **Clone the repository**
+```bash
+- git clone https://github.com/Christine-code-crypto/HealthInformationSystem.git
+ ```
+2. **cd HealthInformationSystem**
+3. **Create and activate a virtual environment**
+```bash
+  python -m venv venv
+```
+4. **Activate the virtual environment**
+```bash
 venv\Scripts\activate
+```
 
-**INSTALL DEPENDANCIES**
-
+## Install Dependancies
+1. **Install required packages**
+```bash
 - pip install -r requirements.txt
-- Configure the database
-Run database migrations
+```
+2.  **Configure the database**
+- Run database migrations
+```bash
 python manage.py migrate
+```
 
-- Create a superuser
+3. **Create a superuser**
+```bash
 python manage.py createsuperuser
-- Run the development server
+```
+4. Run the development server
+```bash
 python manage.py runserver
+```
 
-- API Endpoints
+## API Endpoints
 
 /api/healthprograms/	POST	Create a new health program
 /api/clients/	POST	Register a new client
