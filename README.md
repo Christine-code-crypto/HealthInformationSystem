@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/f0e47f74-9ad3-4db1-b9d9-d68191c835f1)# Health Information System (HealthIS)
+# Health Information System (HealthIS)
 
 A basic health information management system API built with Django and Django REST Framework. This system enables doctors and healthcare providers to efficiently manage clients and health programs.
 
