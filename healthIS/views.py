@@ -1,6 +1,6 @@
 from rest_framework import viewsets, generics,filters
 from .models import Client, HealthProgram, Enrollment
-from .serializers import ClientSerializer, HealthProgramSerializer, ClientProfileSerializer,EnrollmentSerializer
+from .serializers import ClientSerializer, HealthProgramSerializer,MultiEnrollmentSerializer, EnrollmentSerializer,ClientProfileSerializer
 from rest_framework.decorators import action, api_view, permission_classes
 from rest_framework.response import Response
 from django.contrib.auth.models import User
@@ -71,6 +71,26 @@ class ClientSearchView(generics.ListAPIView):
             return Client.objects.filter(name__icontains=query)
         return Client.objects.all()
     '''
+'''
+class EnrollmentViewSet(viewsets.ModelViewSet):
+    queryset = Enrollment.objects.all()
+    serializer_class = EnrollmentSerializer
+'''
+class EnrollmentViewSet(viewsets.ModelViewSet):
+    queryset = Enrollment.objects.all()
+    serializer_class = EnrollmentSerializer  # Default serializer for GET, etc.
+
+    def create(self, request, *args, **kwargs):
+        serializer = MultiEnrollmentSerializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        enrollments = serializer.save()
+
+        # Serialize the created enrollments with the default EnrollmentSerializer to return
+        response_serializer = EnrollmentSerializer(enrollments, many=True)
+        return Response(response_serializer.data, status=status.HTTP_201_CREATED)
+
+
+
 @api_view(['POST'])
 @permission_classes([AllowAny])
 def signup(request):

@@ -1,14 +1,14 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from .views import ClientViewSet, HealthProgramViewSet, signup, login
+from .views import ClientViewSet, HealthProgramViewSet,EnrollmentViewSet, signup,login
 from rest_framework.authtoken import views as drf_views
 from .import views
-
-
 
 router = DefaultRouter()
 router.register(r'clients', ClientViewSet, basename='client')
 router.register(r'healthprograms', HealthProgramViewSet, basename='healthprogram')
+router.register(r'enrollments', EnrollmentViewSet, basename='enrollment')
+
 
 urlpatterns = [
     path('api/', include(router.urls)),
@@ -24,6 +24,5 @@ urlpatterns = [
     path('clients/<int:client_id>/', views.client_profile, name='client-profile'),
     path('clients/<int:client_id>/enroll/', views.enroll_client, name='enroll_client'),
 
-    
 
 ]
