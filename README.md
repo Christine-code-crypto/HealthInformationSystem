@@ -1,4 +1,4 @@
-# Health Information System (HealthIS)
+![image](https://github.com/user-attachments/assets/f0e47f74-9ad3-4db1-b9d9-d68191c835f1)# Health Information System (HealthIS)
 
 A basic health information management system API built with Django and Django REST Framework. This system enables doctors and healthcare providers to efficiently manage clients and health programs.
 
@@ -66,17 +66,17 @@ python manage.py createsuperuser
 python manage.py runserver
 ```
 
-## API Endpoints
+## API Endpoints tested on POSTMAN
 
-✔ **/api/healthprograms/	POST -	Create a new health program**
+✔ **POST http://127.0.0.1:8000/api/healthprograms/ -	Create a new health program**
 
-✔ /api/clients/	POST - 	Register a new client
+✔ **POST http://127.0.0.1:8000/api/clients/ - 	Register a new client**
 
-✔ /api/clients/{id}/enroll/	POST -	Enroll a client in a health program
+✔ **POST http://127.0.0.1:8000/api/enrollments/ -	Enroll a client in a health program**
 
-✔ /api/clients/	GET	- Search clients
+✔ **GET http://127.0.0.1:8000/api/clients/?search=Richard - Search clients**
 
-✔ /api/clients/{id}/profile/	GET	- View a client’s profile
+✔ **GET http://127.0.0.1:8000/api/clients/2/profile/	- View a client’s profile**
 
 ## Testing
 - Run tests using Django’s built-in test framework:
