@@ -68,11 +68,15 @@ python manage.py runserver
 
 ## API Endpoints
 
-/api/healthprograms/	POST	Create a new health program
-/api/clients/	POST	Register a new client
-/api/clients/{id}/enroll/	POST	Enroll a client in a health program
-/api/clients/	GET	Search clients
-/api/clients/{id}/profile/	GET	View a client’s profile
+✔ **/api/healthprograms/	POST -	Create a new health program**
+
+✔ /api/clients/	POST - 	Register a new client
+
+✔ /api/clients/{id}/enroll/	POST -	Enroll a client in a health program
+
+✔ /api/clients/	GET	- Search clients
+
+✔ /api/clients/{id}/profile/	GET	- View a client’s profile
 
 - Testing
 Run tests using Django’s built-in test framework:
